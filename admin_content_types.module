@@ -98,9 +98,7 @@ function admin_content_types_menu_alter(&$items) {
 }
 
 
-function admin_content_types_by_tid() {
-  drupal_load('module', 'devel');
-  
+function admin_content_types_by_tid() {  
   $variable = variable_get('admin_content_type_tids', array());
   
   foreach (node_get_types('types', NULL, TRUE) as $type) {
