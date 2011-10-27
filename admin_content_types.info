@@ -1,0 +1,6 @@
+name = Admin Content Type
+description = "Organize content types trough categories"
+package = Administration
+core = 6.x
+
+dependencies[] = taxonomy

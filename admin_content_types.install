@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function admin_content_types_install() {
+  
+  $vocabulary = array(
+    'name' => t("Admin Content Types"), //Human readable name of the vocabulary
+    'multiple' => 0, //set 1 to allow multiple selection
+    'required' => 0, //set 1 to make the terms mandatory to be selected
+    'hierarchy' => 0, //set 1 to allow and create hierarchy of the terms within the vocabulary
+    'relations' => 0, //set 1 to set and allow relation amongst multiple terms
+    'module' => 'admin_content_types', //provide the module name in which the vocabulary is defined and which is calling this function
+    'nodes' => array(), //set the node to which this vocabulary will be attached to
+    'weight' => -9, //set the weight to display the vocabulary in the list
+  );
+
+  taxonomy_save_vocabulary($vocabulary);
+  
+  variable_set('admin_content_types_vid', $vocabulary->vid);
+  
+}
+
